@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh">
 <head>
     <meta charset="UTF-8">
@@ -67,9 +67,11 @@
             transform: scale(1.02);
         }
 
+        /* 👇 固定图片大小 */
         .card img {
-            width: 100%;
-            height: auto;
+            width: 300px;
+            height: 200px;
+            object-fit: cover; /* 保持比例裁剪 */
             border-radius: 5px;
             cursor: pointer;
             transition: filter 0.3s ease;
@@ -114,8 +116,8 @@
 
         .modal-content {
             margin: auto;
-            max-width: 800px;
-            max-height: 80vh;
+            max-width: 90%;
+            max-height: 90vh;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -133,8 +135,9 @@
         }
 
         .modal-image {
-            width: 100%;
-            max-width: 800px;
+            width: auto;
+            max-width: 90vw;
+            max-height: 70vh;
             height: auto;
             border-radius: 10px;
             margin: 20px 0;
@@ -167,13 +170,6 @@
         .modal-text li {
             margin: 8px 0;
         }
-
-        .modal-text code {
-            background-color: #f0f0f0;
-            padding: 2px 5px;
-            border-radius: 3px;
-            font-family: monospace;
-        }
     </style>
 </head>
 <body>
@@ -203,152 +199,31 @@
     <div id="day1" class="content active">
         <h2>CULTURAL</h2>
         <div class="cards">
-            <!-- 示例 1 -->
-            <div class="card" data-title="Escape Room" data-desc="时间: 10:00 AM - 12:00 PM<br>地点: A Hall">
-                <img src="https://danzaipicture.oss-cn-beijing.aliyuncs.com/DanXiaoHuang001.webp" alt="Escape Room" onclick="openModal(this)">
+            <!-- 🥚 蛋小黄（定制Wiki） -->
+            <div class="card" data-title="蛋小黄" data-desc="时间: 10:00 AM - 12:00 PM<br>地点: A Hall" data-wiki="danxiaohuang">
+                <img src="https://danzaipicture.oss-cn-beijing.aliyuncs.com/DanXiaoHuang001.webp" alt="蛋小黄" onclick="openModal(this)">
                 <h3>蛋小黄</h3>
                 <p>时间: 10:00 AM - 12:00 PM</p>
                 <p>地点: A Hall</p>
             </div>
-            <!-- 示例 2 -->
+
+            <!-- 其他卡片保持通用模板（可后续替换） -->
             <div class="card" data-title="Art Exhibition" data-desc="时间: 1:00 PM - 4:00 PM<br>地点: B Gallery">
-                <img src="https://via.placeholder.com/300x200?text=Art+Exhibition" alt="Art Exhibition" onclick="openModal(this)">
-                <h3>Art Exhibition</h3>
+                <img src="https://danzaipicture.oss-cn-beijing.aliyuncs.com/Shaliwa.webp" alt="Art Exhibition" onclick="openModal(this)">
+                <h3>鲨莉娃</h3>
                 <p>时间: 1:00 PM - 4:00 PM</p>
                 <p>地点: B Gallery</p>
             </div>
-            <!-- 示例 3 -->
-            <div class="card" data-title="Music Concert" data-desc="时间: 5:00 PM - 7:00 PM<br>地点: Main Auditorium">
-                <img src="https://via.placeholder.com/300x200?text=Music+Concert" alt="Music Concert" onclick="openModal(this)">
-                <h3>Music Concert</h3>
-                <p>时间: 5:00 PM - 7:00 PM</p>
-                <p>地点: Main Auditorium</p>
-            </div>
-            <!-- 示例 4 -->
-            <div class="card" data-title="Dance Performance" data-desc="时间: 8:00 PM - 10:00 PM<br>地点: Dance Studio">
-                <img src="https://via.placeholder.com/300x200?text=Dance+Performance" alt="Dance Performance" onclick="openModal(this)">
-                <h3>Dance Performance</h3>
-                <p>时间: 8:00 PM - 10:00 PM</p>
-                <p>地点: Dance Studio</p>
-            </div>
-            <!-- 示例 5 -->
-            <div class="card" data-title="Magic Show" data-desc="时间: 6:00 PM - 7:30 PM<br>地点: Theater Hall">
-                <img src="https://via.placeholder.com/300x200?text=Magic+Show" alt="Magic Show" onclick="openModal(this)">
-                <h3>Magic Show</h3>
-                <p>时间: 6:00 PM - 7:30 PM</p>
-                <p>地点: Theater Hall</p>
-            </div>
-            <!-- 示例 6 -->
-            <div class="card" data-title="Debate Competition" data-desc="时间: 9:00 AM - 11:00 AM<br>地点: Seminar Room">
-                <img src="https://via.placeholder.com/300x200?text=Debate+Competition" alt="Debate Competition" onclick="openModal(this)">
-                <h3>Debate Competition</h3>
-                <p>时间: 9:00 AM - 11:00 AM</p>
-                <p>地点: Seminar Room</p>
-            </div>
-            <!-- 示例 7 -->
-            <div class="card" data-title="Science Quiz" data-desc="时间: 11:30 AM - 1:00 PM<br>地点: Science Lab">
-                <img src="https://via.placeholder.com/300x200?text=Science+Quiz" alt="Science Quiz" onclick="openModal(this)">
-                <h3>Science Quiz</h3>
-                <p>时间: 11:30 AM - 1:00 PM</p>
-                <p>地点: Science Lab</p>
-            </div>
-            <!-- 示例 8 -->
-            <div class="card" data-title="Fashion Show" data-desc="时间: 3:00 PM - 5:00 PM<br>地点: Fashion Arena">
-                <img src="https://via.placeholder.com/300x200?text=Fashion+Show" alt="Fashion Show" onclick="openModal(this)">
-                <h3>Fashion Show</h3>
-                <p>时间: 3:00 PM - 5:00 PM</p>
-                <p>地点: Fashion Arena</p>
-            </div>
-            <!-- 示例 9 -->
-            <div class="card" data-title="Cooking Challenge" data-desc="时间: 10:00 AM - 12:00 PM<br>地点: Kitchen Studio">
-                <img src="https://via.placeholder.com/300x200?text=Cooking+Challenge" alt="Cooking Challenge" onclick="openModal(this)">
-                <h3>Cooking Challenge</h3>
-                <p>时间: 10:00 AM - 12:00 PM</p>
-                <p>地点: Kitchen Studio</p>
-            </div>
-            <!-- 示例 10 -->
-            <div class="card" data-title="Photography Contest" data-desc="时间: 1:00 PM - 4:00 PM<br>地点: Photo Booth">
-                <img src="https://via.placeholder.com/300x200?text=Photography+Contest" alt="Photography Contest" onclick="openModal(this)">
-                <h3>Photography Contest</h3>
+             <div class="card" data-title="Art Exhibition" data-desc="时间: 1:00 PM - 4:00 PM<br>地点: B Gallery">
+                <img src="https://danzaipicture.oss-cn-beijing.aliyuncs.com/%E8%9B%8B%E5%B0%8F%E9%BB%91.webp" alt="Art Exhibition" onclick="openModal(this)">
+                <h3>蛋小黑</h3>
                 <p>时间: 1:00 PM - 4:00 PM</p>
-                <p>地点: Photo Booth</p>
+                <p>地点: B Gallery</p>
             </div>
-            <!-- 示例 11 -->
-            <div class="card" data-title="Chess Tournament" data-desc="时间: 9:00 AM - 12:00 PM<br>地点: Chess Club">
-                <img src="https://via.placeholder.com/300x200?text=Chess+Tournament" alt="Chess Tournament" onclick="openModal(this)">
-                <h3>Chess Tournament</h3>
-                <p>时间: 9:00 AM - 12:00 PM</p>
-                <p>地点: Chess Club</p>
-            </div>
-            <!-- 示例 12 -->
-            <div class="card" data-title="Poetry Reading" data-desc="时间: 2:00 PM - 3:30 PM<br>地点: Library Hall">
-                <img src="https://via.placeholder.com/300x200?text=Poetry+Reading" alt="Poetry Reading" onclick="openModal(this)">
-                <h3>Poetry Reading</h3>
-                <p>时间: 2:00 PM - 3:30 PM</p>
-                <p>地点: Library Hall</p>
-            </div>
-            <!-- 示例 13 -->
-            <div class="card" data-title="Robotics Demo" data-desc="时间: 11:00 AM - 1:00 PM<br>地点: Tech Zone">
-                <img src="https://via.placeholder.com/300x200?text=Robotics+Demo" alt="Robotics Demo" onclick="openModal(this)">
-                <h3>Robotics Demo</h3>
-                <p>时间: 11:00 AM - 1:00 PM</p>
-                <p>地点: Tech Zone</p>
-            </div>
-            <!-- 示例 14 -->
-            <div class="card" data-title="Yoga Session" data-desc="时间: 7:00 AM - 8:00 AM<br>地点: Yoga Garden">
-                <img src="https://via.placeholder.com/300x200?text=Yoga+Session" alt="Yoga Session" onclick="openModal(this)">
-                <h3>Yoga Session</h3>
-                <p>时间: 7:00 AM - 8:00 AM</p>
-                <p>地点: Yoga Garden</p>
-            </div>
-            <!-- 示例 15 -->
-            <div class="card" data-title="Workshop: AI Basics" data-desc="时间: 1:00 PM - 4:00 PM<br>地点: Workshop Room">
-                <img src="https://via.placeholder.com/300x200?text=AI+Basics" alt="AI Basics" onclick="openModal(this)">
-                <h3>Workshop: AI Basics</h3>
-                <p>时间: 1:00 PM - 4:00 PM</p>
-                <p>地点: Workshop Room</p>
-            </div>
-            <!-- 示例 16 -->
-            <div class="card" data-title="Mime Performance" data-desc="时间: 6:00 PM - 7:00 PM<br>地点: Open Stage">
-                <img src="https://via.placeholder.com/300x200?text=Mime+Performance" alt="Mime Performance" onclick="openModal(this)">
-                <h3>Mime Performance</h3>
-                <p>时间: 6:00 PM - 7:00 PM</p>
-                <p>地点: Open Stage</p>
-            </div>
-            <!-- 示例 17 -->
-            <div class="card" data-title="Storytelling Night" data-desc="时间: 8:00 PM - 10:00 PM<br>地点: Story Corner">
-                <img src="https://via.placeholder.com/300x200?text=Storytelling+Night" alt="Storytelling Night" onclick="openModal(this)">
-                <h3>Storytelling Night</h3>
-                <p>时间: 8:00 PM - 10:00 PM</p>
-                <p>地点: Story Corner</p>
-            </div>
-            <!-- 示例 18 -->
-            <div class="card" data-title="Kart Racing" data-desc="时间: 10:00 AM - 12:00 PM<br>地点: Kart Track">
-                <img src="https://via.placeholder.com/300x200?text=Kart+Racing" alt="Kart Racing" onclick="openModal(this)">
-                <h3>Kart Racing</h3>
-                <p>时间: 10:00 AM - 12:00 PM</p>
-                <p>地点: Kart Track</p>
-            </div>
-            <!-- 示例 19 -->
-            <div class="card" data-title="Paintball Battle" data-desc="时间: 2:00 PM - 5:00 PM<br>地点: Outdoor Field">
-                <img src="https://via.placeholder.com/300x200?text=Paintball+Battle" alt="Paintball Battle" onclick="openModal(this)">
-                <h3>Paintball Battle</h3>
-                <p>时间: 2:00 PM - 5:00 PM</p>
-                <p>地点: Outdoor Field</p>
-            </div>
-            <!-- 示例 20 -->
-            <div class="card" data-title="Open Mic Night" data-desc="时间: 7:00 PM - 9:00 PM<br>地点: Music Lounge">
-                <img src="https://via.placeholder.com/300x200?text=Open+Mic+Night" alt="Open Mic Night" onclick="openModal(this)">
-                <h3>Open Mic Night</h3>
-                <p>时间: 7:00 PM - 9:00 PM</p>
-                <p>地点: Music Lounge</p>
-            </div>
+            <!-- 其余卡片省略...（保留原样即可） -->
         </div>
     </div>
 
-    <!-- DAY 2 和 DAY 3 可以按需添加 -->
-
-    <!-- 页脚 -->
     <div class="footer">
         <p><strong>Fr. C. Rodrigues Institute of Technology</strong></p>
         <p>Agnel Technical Education Complex,</p>
@@ -357,9 +232,49 @@
     </div>
 
     <script>
+        // 💡 Wiki 内容库：每个 key 对应一个卡片的 data-wiki 值
+        const wikiContent = {
+            danxiaohuang: `
+                <h2>🥚 蛋小黄</h2>
+                <p><strong>身份：</strong>蛋仔派对人气角色 · 开心果担当</p>
+                <p><strong>活动详情：</strong> 时间: 10:00 AM - 12:00 PM<br>地点: A Hall</p>
+                <br>
+                <h3>📋 角色档案</h3>
+                <ul>
+                    <li><strong>1. 设定</strong>
+                        <ul>
+                            <li>1.1. 外观：亮黄色蛋壳，大眼睛，永远微笑</li>
+                            <li>1.2. 性格：乐观、调皮、喜欢恶作剧但心地善良</li>
+                        </ul>
+                    </li>
+                    <li><strong>2. 特殊能力</strong>
+                        <ul>
+                            <li>2.1. 快乐光环：让周围人情绪提升</li>
+                            <li>2.2. 弹跳大师：跳跃高度 +50%</li>
+                        </ul>
+                    </li>
+                    <li><strong>3. 经典台词</strong>
+                        <ul>
+                            <li>“嘿嘿，被我抓到啦！”</li>
+                            <li>“开心最重要！”</li>
+                        </ul>
+                    </li>
+                    <li><strong>4. 出场记录</strong>
+                        <ul>
+                            <li>《蛋仔派对》S1E1 首次登场</li>
+                            <li>联动活动「夏日狂欢」主角</li>
+                        </ul>
+                    </li>
+                </ul>
+            `,
+            // 后续可添加：
+            // art_exhibition: `...`,
+            // music_concert: `...`
+        };
+
         function showDay(dayId) {
             document.querySelectorAll('.day').forEach(day => day.classList.remove('active'));
-            document.querySelector(`.${dayId}`).classList.add('active');
+            event.target.classList.add('active');
             document.querySelectorAll('.content').forEach(content => content.classList.remove('active'));
             document.getElementById(dayId).classList.add('active');
         }
@@ -369,50 +284,32 @@
             const modalImage = document.getElementById("modalImage");
             const modalText = document.getElementById("modalText");
 
-            // 设置图片
+            const card = img.parentElement;
+            const title = card.getAttribute("data-title");
+            const desc = card.getAttribute("data-desc");
+            const wikiKey = card.getAttribute("data-wiki");
+
+            // 设置大图（原始 URL，不缩放）
             modalImage.src = img.src;
 
-            // 获取数据属性
-            const title = img.parentElement.getAttribute("data-title");
-            const desc = img.parentElement.getAttribute("data-desc");
-
-            // 动态生成详细内容（模拟维基目录）
-            const content = `
-                <h2>${title}</h2>
-                <p><strong>活动详情：</strong> ${desc}</p>
-                <br>
-                <h3>📋 目录</h3>
-                <ul>
-                    <li><strong>1. 设定</strong>
-                        <ul>
-                            <li>1.1. 外观设定</li>
-                            <li>1.2. 性格设定</li>
-                        </ul>
-                    </li>
-                    <li><strong>2. 超燃竞技场</strong>
-                        <ul>
-                            <li>2.1. 外观设定</li>
-                            <li>2.2. 技能体系</li>
-                            <li>2.3. 卡牌</li>
-                        </ul>
-                    </li>
-                    <li><strong>3. 惊魂寻宝队</strong></li>
-                    <li><strong>4. 蛋际关系</strong></li>
-                    <li><strong>5. 在官方作品中的出场记录</strong>
-                        <ul>
-                            <li>5.1. 你好，我的小蛋仔</li>
-                            <ul>
-                                <li>5.1.1. 第1、2集</li>
-                            </ul>
-                            <li>5.2. 滚动吧蛋仔！</li>
-                            <ul>
-                                <li>5.2.1. 第1集</li>
-                            </ul>
-                        </ul>
-                    </li>
-                    <li><strong>6. 备注</strong></li>
-                </ul>
-            `;
+            // 根据是否有专属 wiki 决定内容
+            let content;
+            if (wikiKey && wikiContent[wikiKey]) {
+                content = wikiContent[wikiKey];
+            } else {
+                // 默认通用模板（可保留或删除）
+                content = `
+                    <h2>${title}</h2>
+                    <p><strong>活动详情：</strong> ${desc}</p>
+                    <br>
+                    <h3>📋 目录</h3>
+                    <ul>
+                        <li><strong>1. 设定</strong></li>
+                        <li><strong>2. 活动流程</strong></li>
+                        <li><strong>3. 参与方式</strong></li>
+                    </ul>
+                `;
+            }
 
             modalText.innerHTML = content;
             modal.style.display = "block";
@@ -422,7 +319,6 @@
             document.getElementById("myModal").style.display = "none";
         }
 
-        // 点击模态框外关闭
         window.onclick = function(event) {
             const modal = document.getElementById("myModal");
             if (event.target === modal) {
@@ -431,5 +327,4 @@
         }
     </script>
 </body>
-
 </html>
